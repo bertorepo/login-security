@@ -36,7 +36,7 @@ public class SecurityConfiguration {
 		return userDetailsService;
 	}
 	
-	@Bean
+	@Bean 
 	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();
 	}
