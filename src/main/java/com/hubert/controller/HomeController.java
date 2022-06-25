@@ -1,5 +1,6 @@
 package com.hubert.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,12 @@ public class HomeController {
 	@GetMapping("/whyus")
 	public String login() {
 		return "Why us Page";
+	}
+	
+
+	@GetMapping("/")
+	public String home(Authentication auth) {
+	
+		return "Welcome Home " + auth.getName().toUpperCase() + " role: " + auth.getAuthorities().toString();
 	}
 }
